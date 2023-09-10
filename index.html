@@ -10,13 +10,26 @@
      <h1>Ingresar Datos</h1>
     <button onclick="ingresarDatos()">Ingresar Datos</button>
     <script>
+        function ingresarDatos ()  {
+            const energia = prompt("Tipo de energía: ");
+            const descripcion = prompt ("Descripcion; ");
+            const energia_generada = prompt ("Energia generada, ");
+            const presupuesto = prompt ("Presupuesto, ");
+            const tiempo_estimado = promt ("Tiempo de demora, ");
+
+            if (energia, descripcion, energia_generada, presupuesto, 
+            tiempo_estimado !== null && dato !=="") {
+                agregarDatoATabla (dato);
+            }
+
+        }
         //recopilacion de datos 
-        var energia = window.prompt("Tipo de energía: ")
+       /*var energia = window.prompt("Tipo de energía: ")
         var descripcion = window.prompt ("Descripcion; ")
         var energia_generada = window.prompt ("Energia generada, ")
         var presupuesto = window.prompt ("Presupuesto, ")
         var tiempo_estimado = window.promt ("Tiempo de demora, ")
-
+        /*
 
 
     </script>
