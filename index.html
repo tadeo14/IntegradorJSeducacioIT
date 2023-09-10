@@ -3,43 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alternativas de energia</title>
-    <script src="codigo.js"></script>
+    <title>Alternativas de Energía</title>
 </head>
 <body>
-     <h1>Ingresar Datos</h1>
+    <h1>Ingresar Datos</h1>
     <button onclick="ingresarDatos()">Ingresar Datos</button>
+
+    <h2>Tabla de Datos</h2>
+    <table id="tablaDatos" border="1">
+        <tr>
+            <th>Tipo de Energía</th>
+            <th>Descripción</th>
+            <th>Energía Generada</th>
+            <th>Presupuesto</th>
+            <th>Tiempo de Demora</th>
+        </tr>
+    </table>
+
     <script>
-        function ingresarDatos ()  {
-            const energia = prompt("Tipo de energía: ");
-            const descripcion = prompt ("Descripcion; ");
-            const energia_generada = prompt ("Energia generada, ");
-            const presupuesto = prompt ("Presupuesto, ");
-            const tiempo_estimado = prompt ("Tiempo de demora, ");
-            
-            if (energia, descripcion, energia_generada, presupuesto, 
-            tiempo_estimado !== null && dato !=="") {
-                agregarDatoATabla (dato);
+        function ingresarDatos() {
+            const tipoEnergia = prompt("Tipo de energía: ");
+            const descripcion = prompt("Descripción: ");
+            const energiaGenerada = prompt("Energía generada: ");
+            const presupuesto = prompt("Presupuesto: ");
+            const tiempoDemora = prompt("Tiempo de demora: ");
+
+            if (tipoEnergia !== null && tipoEnergia !== "") {
+                agregarDatoATabla(tipoEnergia, descripcion, energiaGenerada, presupuesto, tiempoDemora);
             }
         }
-        function agregarDatoATabla(dato) {
+
+        function agregarDatoATabla(tipoEnergia, descripcion, energiaGenerada, presupuesto, tiempoDemora) {
             const tablaDatos = document.getElementById('tablaDatos');
-            
+
             // Crear una nueva fila en la tabla
             const fila = document.createElement('tr');
 
-            // Crear una celda en la fila y asignarle el dato
-            const celda = document.createElement('td');
-            celda.textContent = dato;
+            // Crear celdas para cada dato
+            const celdaTipoEnergia = document.createElement('td');
+            const celdaDescripcion = document.createElement('td');
+            const celdaEnergiaGenerada = document.createElement('td');
+            const celdaPresupuesto = document.createElement('td');
+            const celdaTiempoDemora = document.createElement('td');
 
-            // Agregar la celda a la fila
-            fila.appendChild(celda);
+            // Asignar los datos a las celdas
+            celdaTipoEnergia.textContent = tipoEnergia;
+            celdaDescripcion.textContent = descripcion;
+            celdaEnergiaGenerada.textContent = energiaGenerada;
+            celdaPresupuesto.textContent = presupuesto;
+            celdaTiempoDemora.textContent = tiempoDemora;
+
+            // Agregar las celdas a la fila
+            fila.appendChild(celdaTipoEnergia);
+            fila.appendChild(celdaDescripcion);
+            fila.appendChild(celdaEnergiaGenerada);
+            fila.appendChild(celdaPresupuesto);
+            fila.appendChild(celdaTiempoDemora);
 
             // Agregar la fila a la tabla
             tablaDatos.appendChild(fila);
         }
-           
     </script>
-    
 </body>
 </html>
