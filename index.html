@@ -15,26 +15,31 @@
             const descripcion = prompt ("Descripcion; ");
             const energia_generada = prompt ("Energia generada, ");
             const presupuesto = prompt ("Presupuesto, ");
-            const tiempo_estimado = promt ("Tiempo de demora, ");
+            const tiempo_estimado = prompt ("Tiempo de demora, ");
             
-            
-        }
-            /*
             if (energia, descripcion, energia_generada, presupuesto, 
             tiempo_estimado !== null && dato !=="") {
                 agregarDatoATabla (dato);
-            }/*
-
+            }
         }
-        //recopilacion de datos 
-       /*var energia = window.prompt("Tipo de energía: ")
-        var descripcion = window.prompt ("Descripcion; ")
-        var energia_generada = window.prompt ("Energia generada, ")
-        var presupuesto = window.prompt ("Presupuesto, ")
-        var tiempo_estimado = window.promt ("Tiempo de demora, ")
-        /*
+        function agregarDatoATabla(dato) {
+            const tablaDatos = document.getElementById('tablaDatos');
+            
+            // Crear una nueva fila en la tabla
+            const fila = document.createElement('tr');
 
+            // Crear una celda en la fila y asignarle el dato
+            const celda = document.createElement('td');
+            celda.textContent = dato;
 
+            // Agregar la celda a la fila
+            fila.appendChild(celda);
+
+            // Agregar la fila a la tabla
+            tablaDatos.appendChild(fila);
+        }
+           
     </script>
+    
 </body>
 </html>
